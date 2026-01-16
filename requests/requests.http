@@ -1,0 +1,8 @@
+### Auth endpoint - Check authorization
+GET http://localhost:8000/auth
+X-API-Key: testkey
+
+
+### Update endpoint - Updates tickers
+GET http://localhost:8000/update
+X-API-Key: testkey
