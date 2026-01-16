@@ -26,6 +26,9 @@ ENV/
 # Data files (optional - uncomment if you don't want to track data)
 # data/
 
+# Market data
+data/markets/
+
 # Logs
 *.log
 logs/

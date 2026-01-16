@@ -1,0 +1,51 @@
+{
+    "universe": "us_equities_500_bootstrap",
+    "version": "v0",
+    "created_at": "2026-01-16",
+    "tickers": [
+      "AAPL","MSFT","NVDA","AMZN","META","GOOG","GOOGL","TSLA","AVGO","COST",
+      "PEP","ADBE","CSCO","CMCSA","NFLX","AMD","TXN","QCOM","INTU","AMAT",
+      "MU","ISRG","BKNG","ADP","GILD","LRCX","MDLZ","REGN","VRTX","SBUX",
+      "KLAC","PANW","ABNB","SNPS","CDNS","CRWD","MAR","ASML","ORLY","NXPI",
+      "MELI","FTNT","PAYX","CTAS","WDAY","PCAR","ROST","MNST","FAST","ODFL",
+  
+      "IBM","ORCL","CRM","NOW","INTC","TSM","ARM","SHOP","SQ","PYPL",
+      "UBER","LYFT","SNAP","PINS","RBLX","PLTR","SNOW","DDOG","MDB","NET",
+      "DOCU","OKTA","ZS","TWLO","FSLY","AKAM","ZM","TEAM","BOX","ESTC",
+  
+      "JPM","BAC","WFC","C","GS","MS","SCHW","BLK","AXP","V",
+      "MA","DFS","COF","PNC","USB","BK","STT","AIG","MET","PRU",
+      "ALL","TRV","CME","ICE","SPGI","MCO","MSCI","NDAQ","AMP","TROW",
+  
+      "JNJ","PFE","MRK","LLY","ABBV","BMY","AMGN","GSK","SNY","UNH",
+      "CVS","CI","HUM","ELV","BDX","SYK","MDT","BSX","ZBH","IQV",
+      "ILMN","EXAS","NTRA","ALNY","CRSP","NTLA","MRNA","BNTX","BIIB","REGN",
+  
+      "WMT","TGT","HD","LOW","BBY","DG","DLTR","MCD","YUM","CMG",
+      "DPZ","NKE","LULU","DECK","PG","KO","CL","KMB","GIS","KHC",
+      "CELH","COST","PEP","MNST","KR","SJM","HSY","MKC","CPB","TSN",
+  
+      "CAT","DE","BA","GE","RTX","LMT","NOC","GD","MMM","HON",
+      "EMR","ETN","ITW","UPS","FDX","UNP","CSX","NSC","URI","CMI",
+      "PCAR","IR","FAST","ROK","PH","AME","XYL","DOV","JCI","MAS",
+  
+      "XOM","CVX","COP","EOG","SLB","HAL","PSX","MPC","OXY","DVN",
+      "PXD","MRO","APA","VLO","KMI","WMB","OKE","ET","HES","FANG",
+  
+      "DIS","PARA","FOXA","FOX","LYV","SPOT","ROKU","TTD","IAC","MTCH",
+      "CHTR","VZ","T","TMUS","NFLX","EA","TTWO","ATVI","U","RBLX",
+  
+      "NEE","DUK","SO","AEP","XEL","EXC","SRE","PEG","ED","EIX",
+      "PLD","AMT","EQIX","DLR","CCI","PSA","WELL","VTR","O","AVB",
+  
+      "INTC","AMD","NVDA","QCOM","AVGO","TXN","MCHP","MPWR","SWKS","QRVO",
+      "TER","ON","LSCC","ENTG","COHR","ALGM","SMCI","WDC","STX","MU",
+  
+      "SPG","TMO","DHR","ABT","SYK","ZTS","IDXX","BIIB","VRTX","REGN",
+      "MO","PM","EL","CLX","CHD","KDP","K","CAG","HRL","LW",
+  
+      "UBER","DASH","ABNB","BKNG","EXPE","RCL","CCL","NCLH","UAL","DAL",
+      "AAL","LUV","ALK","JBLU","SAVE","TXT","GD","LHX","HII","BWXT"
+    ]
+  }
+  
