@@ -1,0 +1,11 @@
+fastapi
+uvicorn[standard]
+yfinance
+pandas
+pydantic
+python-dotenv
+httpx
+pytest
+ruff
+black
+loguru
