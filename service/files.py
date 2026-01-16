@@ -1,6 +1,12 @@
 import json
 from pathlib import Path
 
+DATA_DIR = Path(__file__).parent.parent / "data/markets"
+
+def get_ticker_path(exchange: str, ticker: str, file_name: str, file_extension: str = "csv") -> Path:
+
+    return DATA_DIR / exchange.lower() / ticker.upper() / f"{file_name}.{file_extension}"
+
 def load_tickers(type: str = "test") -> list[str]:
     
     if type == "test":
