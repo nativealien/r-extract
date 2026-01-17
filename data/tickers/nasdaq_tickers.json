@@ -2,6 +2,7 @@
     "universe": "us_equities_500_bootstrap",
     "version": "v0",
     "created_at": "2026-01-16",
+    "exchange": "NMS",
     "tickers": [
       "AAPL","MSFT","NVDA","AMZN","META","GOOG","GOOGL","TSLA","AVGO","COST",
       "PEP","ADBE","CSCO","CMCSA","NFLX","AMD","TXN","QCOM","INTU","AMAT",

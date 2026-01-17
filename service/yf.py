@@ -1,15 +1,39 @@
 import yfinance as yf
 import pandas as pd
+from datetime import datetime
 from loguru import logger
 
-TIMEFRAME_MAP = {
-    "1m": "1m",
-    "5m": "5m",
-    "15m": "15m",
-    "1h": "1h",
-    "1d": "1d",
-    "1wk": "1wk",
-}
+from data.static.static import TIMEFRAME_MAP
+from service.time import get_today_swedish_date
+
+
+def _parse_date_string(date_str: str) -> str:
+    """
+    Parse a date/datetime string and return just the date part in YYYY-MM-DD format.
+    Handles various formats including datetime strings with timezone info.
+    """
+    if not date_str:
+        return None
+    
+    # Try parsing as ISO format datetime
+    try:
+        dt = datetime.fromisoformat(date_str.replace('Z', '+00:00'))
+        return dt.strftime('%Y-%m-%d')
+    except (ValueError, AttributeError):
+        pass
+    
+    # Try parsing as date only (YYYY-MM-DD)
+    try:
+        dt = datetime.strptime(date_str.split()[0], '%Y-%m-%d')
+        return dt.strftime('%Y-%m-%d')
+    except (ValueError, IndexError):
+        pass
+    
+    # Return first 10 characters if it looks like a date
+    if len(date_str) >= 10:
+        return date_str[:10]
+    
+    return date_str
 
 def get_data(ticker: str, timeframe: str = "1d", period: str = "max") -> pd.DataFrame | None:
     try:
@@ -31,7 +55,7 @@ def get_data(ticker: str, timeframe: str = "1d", period: str = "max") -> pd.Data
 
         hist = hist.drop(columns=['Dividends', 'Stock Splits'], errors='ignore')
 
-        print(hist)
+        return hist
 
     except Exception as e:
         logger.error(f"Error getting data for {ticker}: {e}")
@@ -40,8 +64,18 @@ def get_data(ticker: str, timeframe: str = "1d", period: str = "max") -> pd.Data
 def update_data(ticker: str, timeframe: str = "1d", from_date: str = None, to_date: str = None) -> None:
     try:
         # TODO: If dates is within weekend, adjust to nearest weekday
-        if from_date is None or to_date is None:
-            raise ValueError("from_date and to_date are required")
+        if to_date is None:
+            today = get_today_swedish_date()
+            to_date = today.strftime('%Y-%m-%d')
+        else:
+            # Parse to_date to extract just the date part
+            to_date = _parse_date_string(to_date)
+        
+        if from_date is None:
+            raise ValueError("from_date is required")
+        
+        # Parse from_date to extract just the date part
+        from_date = _parse_date_string(from_date)
 
         yf_ticker = yf.Ticker(ticker)
         yf_timeframe = TIMEFRAME_MAP.get(timeframe, "1d")
@@ -59,7 +93,7 @@ def update_data(ticker: str, timeframe: str = "1d", from_date: str = None, to_da
 
         hist = hist.drop(columns=['Dividends', 'Stock Splits'], errors='ignore')
 
-        print(hist.empty)
+        return hist
 
     except Exception as e:
         logger.error(f"Error updating data for {ticker}: {e}")
@@ -73,5 +107,3 @@ def get_meta(ticker: str) -> dict | None:
     except Exception as e:
         logger.error(f"Error getting metadata for {ticker}: {e}")
         return None
-
-update_data("AAPL", "5m", "2025-01-01", "2025-01-12")
